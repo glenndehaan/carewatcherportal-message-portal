@@ -1,0 +1,20 @@
+{
+  "name": "carewatcherportal-message-portal",
+  "version": "0.0.0",
+  "description": "NPM packages for carewatcherportal-message-portal",
+  "private": true,
+  "scripts": {
+    "start": "export NODE_PATH=./node_modules; node ../app/server.js",
+    "dev": "export NODE_PATH=./node_modules; nodemon -L --watch ../app ../app/server.js"
+  },
+  "author": "Glenn de Haan",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0",
+    "node-json-db": "^0.7.3",
+    "simple-node-logger": "^0.93.30"
+  }
+}

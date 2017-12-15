@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+        <% include ../partials/header.ejs %>
+
+        <main>
+            Some text here<br/>
+            We found the following Robots in JsonDB:<br/>
+            <ul>
+                <% robots.forEach((robot) => { %>
+                    <li><%= robot._id %> - <%= robot.name %></li>
+                <% }); %>
+            </ul>
+        </main>
+
+        <% include ../partials/footer.ejs %>
+    </body>
+</html>
