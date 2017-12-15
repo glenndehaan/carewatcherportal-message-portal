@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "export NODE_PATH=./node_modules; node ../app/server.js",
+    "startwin": "SET NODE_PATH=./node_modules; node ../app/server.js",
     "dev": "export NODE_PATH=./node_modules; nodemon -L --watch ../app ../app/server.js"
   },
   "author": "Glenn de Haan",
