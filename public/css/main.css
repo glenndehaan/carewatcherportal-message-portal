@@ -38,3 +38,13 @@
 * {
     font-family: Arial !important;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+main {
+    margin-bottom: 80px;
+}
