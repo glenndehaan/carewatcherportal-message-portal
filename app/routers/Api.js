@@ -32,6 +32,12 @@ const routes = [
         method: 'post',
         controller: 'Admin',
         action: 'room'
+    },
+    {
+        route: '/admin/message',
+        method: 'post',
+        controller: 'Admin',
+        action: 'message'
     }
 ];
 

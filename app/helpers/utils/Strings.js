@@ -13,4 +13,23 @@ function createId() {
     return text;
 }
 
-module.exports = {createId};
+/**
+ * Returns a color
+ *
+ * @param prio
+ * @return {string}
+ */
+function getColorBasedOnPrio(prio) {
+    switch (prio) {
+        case 1:
+            return "red";
+        case 2:
+            return "orange";
+        case 3:
+            return "green";
+        default:
+            return "blue";
+    }
+}
+
+module.exports = {createId, getColorBasedOnPrio};

@@ -7,6 +7,18 @@ class AdminController extends baseController {
         super();
     }
 
+    completedAction(req, res) {
+        const index = arrays.findIndexByKeyValue(database.getData("/message"), "id", req.body.id);
+
+        if (index !== false) {
+            database.push(`/message[${index}]/completed`, true, true);
+
+            this.jsonResponse(res, 201, {'message': 'Message modified!'});
+        } else {
+            this.jsonResponse(res, 400, {'error': 'Incorrect message!'});
+        }
+    }
+
     roomAction(req, res) {
         const action = req.body.action;
 

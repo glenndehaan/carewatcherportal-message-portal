@@ -7,36 +7,27 @@
         <% include ../partials/header.ejs %>
         <div class="container">
             <main>
-
                 <div class="row">
-                <% messages.forEach((message) => { %>
-
-
-                            <div class="col s12 m6">
-                                <div class="card hoverable">
-
-
-                                    <div class="card  red accent-2">
-
-                                        <div class="card-content white-text">
-                                            <div class="iconbox">
-                                                <div class="left"><i class="material-icons">error</i></div>
-                                                <div class="right"><input type="checkbox" id='<%= message._id%>' /> <label for='<%= message._id%>' >Done</label></div>
-                                            </div>
-
-                                            <span class="card-title"><%= message.client_name %> - <%= message.title %></span>
-
-                                            <p><%= message.message %></p><br>
-
-                                            <%= new Date(message.created).getDay() %>-<%= new Date(message.created).getMonth() %>-<%= new Date(message.created).getFullYear() %> <%= new Date(message.created).getHours() %>:<%= new Date(message.created).getMinutes() %>
-
+                    <% messages.forEach((message) => { %>
+                        <div class="col s12 m6">
+                            <div class="card hoverable">
+                                <div class="card <%= stringsHelper.getColorBasedOnPrio(message.prio) %> accent-2">
+                                    <div class="card-content white-text">
+                                        <div class="iconbox">
+                                            <div class="left"><i class="material-icons">error</i></div>
+                                            <div class="right"><input type="checkbox" id='<%= message._id%>' /> <label for='<%= message._id%>' >Done</label></div>
                                         </div>
+
+                                        <span class="card-title"><%= message.client_name %> - <%= message.title %></span>
+
+                                        <p><%= message.message %></p><br>
+
+                                        <%= new Date(message.created).getDay() %>-<%= new Date(message.created).getMonth() %>-<%= new Date(message.created).getFullYear() %> <%= new Date(message.created).getHours() %>:<%= new Date(message.created).getMinutes() %>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
-                <% }); %>
+                    <% }); %>
                 </div>
             </main>
         </div>

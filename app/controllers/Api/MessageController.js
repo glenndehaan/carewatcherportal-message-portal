@@ -34,7 +34,8 @@ class MessageController extends baseController {
                 title: req.body.title,
                 message: req.body.message,
                 prio: req.body.prio,
-                created: created
+                created: created,
+                completed: false
             });
 
             const socketMessage = objects.addClientsToObject({
@@ -44,7 +45,8 @@ class MessageController extends baseController {
                 title: req.body.title,
                 message: req.body.message,
                 prio: req.body.prio,
-                created: created
+                created: created,
+                completed: false
             }, database.getData("/room"));
 
             config.socket.broadcastNewMessage(socketMessage);
