@@ -21,7 +21,7 @@ function initialize() {
 function addMessageToDOM(message) {
     var ul = document.querySelector("#messages");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(message._id + ' - ' + message.id + ' - ' + message.title + ' - ' + message.prio));
+    li.appendChild(document.createTextNode(message._id + ' - ' + message.id + ' - ' + message.title + ' - ' + message.prio + ' - ' + message.client_name));
     ul.insertBefore(li, ul.childNodes[0])
 }
 

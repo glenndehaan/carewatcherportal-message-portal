@@ -11,7 +11,7 @@
             We found the following Messages in JsonDB:<br/>
             <ul id="messages">
                 <% messages.forEach((message) => { %>
-                    <li><%= message._id %> - <%= message.id %> - <%= message.title %> - <%= message.prio %></li>
+                    <li><%= message._id %> - <%= message.id %> - <%= message.title %> - <%= message.prio %> - <%= message.client_name %></li>
                 <% }); %>
             </ul>
         </main>

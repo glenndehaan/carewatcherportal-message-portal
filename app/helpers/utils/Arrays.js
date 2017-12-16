@@ -16,4 +16,41 @@ function findIndexByKeyValue(array, key, value) {
     return false;
 }
 
-module.exports = {findIndexByKeyValue};
+/**
+ * Add clients to array
+ *
+ * @param rooms
+ * @param clients
+ * @return {*}
+ */
+function addClientsToArray(rooms, clients) {
+    for (let i = 0; i < rooms.length; i++) {
+        const roomNumber = rooms[i].roomNumber;
+        const clientIndex = findIndexByKeyValue(clients, "id", roomNumber);
+
+        if(clientIndex !== false) {
+            rooms[i].client_name = clients[clientIndex].client_name;
+        } else {
+            rooms[i].client_name = "Room not in use!";
+        }
+    }
+
+    return rooms.sort(sortOnCreated);
+}
+
+/**
+ * Sort on created
+ *
+ * @param a
+ * @param b
+ * @return {number}
+ */
+function sortOnCreated(a, b) {
+    if (a.created < b.created)
+        return 1;
+    if (a.created > b.created)
+        return -1;
+    return 0;
+}
+
+module.exports = {findIndexByKeyValue, addClientsToArray, sortOnCreated};

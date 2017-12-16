@@ -2,6 +2,7 @@ const baseController = require('./BaseController');
 const database = require("../../helpers/modules/database").db;
 const createId = require("../../helpers/utils/Strings").createId;
 const config = require("../../config/config");
+const objects = require("../../helpers/utils/Objects");
 
 class MessageController extends baseController {
     constructor() {
@@ -36,7 +37,7 @@ class MessageController extends baseController {
                 created: created
             });
 
-            config.socket.broadcastNewMessage({
+            const socketMessage = objects.addClientsToObject({
                 _id: id,
                 id: req.body.id,
                 roomNumber: req.body.roomNumber,
@@ -44,7 +45,9 @@ class MessageController extends baseController {
                 message: req.body.message,
                 prio: req.body.prio,
                 created: created
-            });
+            }, database.getData("/room"));
+
+            config.socket.broadcastNewMessage(socketMessage);
 
             console.log(`[API] New message created with ID: ${req.body.id}`);
             this.jsonResponse(res, 201, { 'message': 'Message created!' });

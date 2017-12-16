@@ -31,6 +31,7 @@ class Socket {
             _id: message._id,
             id: message.id,
             roomNumber: message.roomNumber,
+            client_name: message.client_name,
             title: message.title,
             message: message.message,
             prio: message.prio,
