@@ -26,6 +26,11 @@ class Socket {
         console.log('[SYSTEM] Socket.IO started !');
     }
 
+    /**
+     * Broadcasts a new message to the sockets
+     *
+     * @param message
+     */
     broadcastNewMessage(message) {
         this.io.emit('message', {
             _id: message._id,
@@ -35,7 +40,18 @@ class Socket {
             title: message.title,
             message: message.message,
             prio: message.prio,
-            created: message.created
+            completed: message.completed
+        });
+    }
+
+    /**
+     * Broadcasts a message complete to the sockets
+     *
+     * @param id
+     */
+    broadcastMessageComplete(id) {
+        this.io.emit('message_complete', {
+            _id: id
         });
     }
 }

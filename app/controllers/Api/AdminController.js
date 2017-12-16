@@ -1,5 +1,6 @@
 const baseController = require('./BaseController');
 const database = require("../../helpers/modules/database").db;
+const config = require("../../config/config");
 const arrays = require("../../helpers/utils/Arrays");
 
 class AdminController extends baseController {
@@ -7,11 +8,13 @@ class AdminController extends baseController {
         super();
     }
 
-    completedAction(req, res) {
-        const index = arrays.findIndexByKeyValue(database.getData("/message"), "id", req.body.id);
+    messageAction(req, res) {
+        const index = arrays.findIndexByKeyValue(database.getData("/message"), "_id", req.body._id);
 
         if (index !== false) {
             database.push(`/message[${index}]/completed`, true, true);
+
+            config.socket.broadcastMessageComplete(req.body._id);
 
             this.jsonResponse(res, 201, {'message': 'Message modified!'});
         } else {
