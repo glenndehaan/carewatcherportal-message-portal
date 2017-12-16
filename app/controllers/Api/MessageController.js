@@ -1,6 +1,7 @@
 const baseController = require('./BaseController');
 const database = require("../../helpers/modules/database").db;
 const createId = require("../../helpers/utils/Strings").createId;
+const config = require("../../config/config");
 
 class MessageController extends baseController {
     constructor() {
@@ -22,15 +23,27 @@ class MessageController extends baseController {
 
         if(typeof id !== "undefined" && typeof roomNumber !== "undefined" && typeof title !== "undefined" && typeof message !== "undefined" && typeof prio !== "undefined"){
             const currentDate = new Date();
+            const id = createId();
+            const created = currentDate.getTime();
 
             database.push("/message[]", {
-                _id: createId(),
+                _id: id,
                 id: req.body.id,
                 roomNumber: req.body.roomNumber,
                 title: req.body.title,
                 message: req.body.message,
                 prio: req.body.prio,
-                created: currentDate.getTime()
+                created: created
+            });
+
+            config.socket.broadcastNewMessage({
+                _id: id,
+                id: req.body.id,
+                roomNumber: req.body.roomNumber,
+                title: req.body.title,
+                message: req.body.message,
+                prio: req.body.prio,
+                created: created
             });
 
             console.log(`[API] New message created with ID: ${req.body.id}`);

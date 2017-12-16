@@ -15,7 +15,8 @@
     "express": "^4.15.3",
     "nodemon": "^1.13.3",
     "node-json-db": "^0.7.3",
-    "simple-node-logger": "^0.93.30"
+    "simple-node-logger": "^0.93.30",
+    "socket.io": "^2.0.4"
   },
   "nodemonConfig": {
     "ignore": [

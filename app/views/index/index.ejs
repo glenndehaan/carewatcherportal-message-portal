@@ -18,6 +18,10 @@
 
         <% include ../partials/footer.ejs %>
 
+        <script>
+            var expressConfig = {port: <%= config.application.port %>, hostname: '<%= hostname %>'};
+        </script>
+        <script src="js/libraries/socket.io.js" type="application/javascript"></script>
         <script src="js/main.js" type="application/javascript"></script>
     </body>
 </html>
