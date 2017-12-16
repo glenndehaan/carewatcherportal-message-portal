@@ -40,6 +40,7 @@ class Socket {
             title: message.title,
             message: message.message,
             prio: message.prio,
+            created: message.created,
             completed: message.completed
         });
     }
