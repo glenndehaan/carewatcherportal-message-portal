@@ -19,10 +19,27 @@ function initialize() {
 }
 
 function addMessageToDOM(message) {
-    var ul = document.querySelector("#messages");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(message._id + ' - ' + message.id + ' - ' + message.title + ' - ' + message.prio + ' - ' + message.client_name));
-    ul.insertBefore(li, ul.childNodes[0])
+    var container = document.querySelector("#messages");
+    container.insertAdjacentHTML("afterbegin", `
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card ${expressConfig.stringsHelper.getColorBasedOnPrio(message.prio)} accent-2">
+                    <div class="card-content white-text">
+                        <div class="iconbox">
+                            <div class="left"><i class="material-icons">error</i></div>
+                            <div class="right"><input type="checkbox" id='${message._id}' /> <label for='${message._id}' >Done</label></div>
+                        </div>
+
+                        <span class="card-title">${message.client_name} - ${message.title}</span>
+
+                        <p>${message.message}</p><br>
+
+                        ${new Date(message.created).getDay()}-${new Date(message.created).getMonth()}-${new Date(message.created).getFullYear()} ${new Date(message.created).getHours()}:${new Date(message.created).getMinutes()}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
 }
 
 document.addEventListener("DOMContentLoaded", initialize);
