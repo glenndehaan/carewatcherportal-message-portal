@@ -4,7 +4,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const database = require("./helpers/utils/Database");
+const database = require("./helpers/modules/Database");
 
 /**
  * Import own packages

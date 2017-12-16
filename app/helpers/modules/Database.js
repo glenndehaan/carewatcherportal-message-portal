@@ -13,7 +13,6 @@ function init() {
      */
     if (Object.keys(db.getData("/")).length === 0 && db.getData("/").constructor === Object) {
         db.push("/message", []);
-        db.push("/robot", []);
 
         console.log("[DATABASE] Initialize database for the first time!");
     }

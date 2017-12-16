@@ -8,10 +8,10 @@
 
         <main>
             Some text here<br/>
-            We found the following Robots in JsonDB:<br/>
-            <ul>
-                <% robots.forEach((robot) => { %>
-                    <li><%= robot._id %> - <%= robot.name %></li>
+            We found the following Messages in JsonDB:<br/>
+            <ul id="messages">
+                <% messages.forEach((message) => { %>
+                    <li><%= message._id %> - <%= message.id %> - <%= message.title %> - <%= message.prio %></li>
                 <% }); %>
             </ul>
         </main>

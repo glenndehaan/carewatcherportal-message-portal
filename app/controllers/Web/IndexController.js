@@ -1,9 +1,9 @@
-const database = require("../../helpers/utils/database").db;
+const database = require("../../helpers/modules/database").db;
 
 class IndexController {
     indexAction(req, res) {
         res.render('index/index.ejs', {
-            robots: database.getData("/robot")
+            messages: database.getData("/message")
         });
     }
 }

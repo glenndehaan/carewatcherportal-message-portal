@@ -3,7 +3,7 @@
  */
 const express = require('express');
 const router = express.Router();
-const routerUtils = require('../helpers/utils/Router');
+const routerUtils = require('../helpers/modules/Router');
 
 /**
  * Define routes
@@ -16,28 +16,16 @@ const routes = [
         action: 'index'
     },
     {
-        route: '/robots',
+        route: '/message',
         method: 'get',
-        controller: 'Robots',
+        controller: 'Message',
         action: 'index'
     },
     {
-        route: '/robots',
+        route: '/message',
         method: 'post',
-        controller: 'Robots',
+        controller: 'Message',
         action: 'create'
-    },
-    {
-        route: '/robots/:id',
-        method: 'get',
-        controller: 'Robots',
-        action: 'getOne'
-    },
-    {
-        route: '/robots/:id',
-        method: 'delete',
-        controller: 'Robots',
-        action: 'delete'
     }
 ];
 
