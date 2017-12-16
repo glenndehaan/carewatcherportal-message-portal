@@ -14,8 +14,8 @@
                                 <div class="card <%= stringsHelper.getColorBasedOnPrio(message.prio) %> accent-2">
                                     <div class="card-content white-text">
                                         <div class="iconbox">
-                                            <div class="left"><i class="material-icons">error</i></div>
-                                            <div class="right"><input type="checkbox" class="completed-checkbox" id='<%= message._id %>' data-id="<%= message._id %>" data-completed="<%= message.completed %>" <%= message.completed ? 'checked="checked" disabled' : '' %> /> <label for='<%= message._id %>' >Done</label></div>
+                                            <div class="left"><i class="material-icons"><%= stringsHelper.getIconOnPrio(message.prio) %></i>&nbsp;</div>
+                                            <div class="right"><input type="checkbox" class="completed-checkbox" id='<%= message._id %>' data-id="<%= message._id %>" data-completed="<%= message.completed %>" <%= message.completed ? 'checked="checked" disabled' : '' %> /> <label for='<%= message._id %>' class="white-text" >Done</label></div>
                                         </div>
 
                                         <span class="card-title"><%= message.client_name %> - <%= message.title %></span>

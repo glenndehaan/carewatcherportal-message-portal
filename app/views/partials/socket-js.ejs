@@ -1,5 +1,5 @@
 <script>
-    var expressConfig = {port: <%= config.application.port %>, hostname: '<%= hostname %>', stringsHelper: {getColorBasedOnPrio: <%- stringsHelper.getColorBasedOnPrio %>, fixTimeCalculation: <%- stringsHelper.fixTimeCalculation %>}};
+    var expressConfig = {port: <%= config.application.port %>, hostname: '<%= hostname %>', stringsHelper: {getColorBasedOnPrio: <%- stringsHelper.getColorBasedOnPrio %>, getIconOnPrio: <%- stringsHelper.getIconOnPrio %>, fixTimeCalculation: <%- stringsHelper.fixTimeCalculation %>}};
 </script>
 <script src="/js/libraries/socket.io.js" type="application/javascript"></script>
 <script src="/js/main.js" type="application/javascript"></script>

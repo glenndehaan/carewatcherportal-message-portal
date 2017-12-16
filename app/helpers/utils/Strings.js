@@ -22,13 +22,31 @@ function createId() {
 function getColorBasedOnPrio(prio) {
     switch (prio) {
         case 1:
-            return "red";
+            return "blue";
         case 2:
             return "orange";
         case 3:
-            return "green";
+            return "red";
         default:
             return "blue";
+    }
+}
+/**
+ * Returns a icon name
+ *
+ * @param prio
+ * @return {string}
+ */
+function getIconOnPrio(prio) {
+    switch (prio) {
+        case 1:
+            return "speaker_notes";
+        case 2:
+            return "warning";
+        case 3:
+            return "error_outline";
+        default:
+            return "speaker_notes";
     }
 }
 
@@ -46,4 +64,4 @@ function fixTimeCalculation(time) {
     }
 }
 
-module.exports = {createId, getColorBasedOnPrio, fixTimeCalculation};
+module.exports = {createId, getColorBasedOnPrio, getIconOnPrio, fixTimeCalculation};
