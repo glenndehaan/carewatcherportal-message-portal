@@ -32,4 +32,18 @@ function getColorBasedOnPrio(prio) {
     }
 }
 
-module.exports = {createId, getColorBasedOnPrio};
+/**
+ * Prepend the 0 if we need it
+ *
+ * @param time
+ * @return {*}
+ */
+function fixTimeCalculation(time) {
+    if(time < 10){
+        return `0${time}`;
+    } else {
+        return time
+    }
+}
+
+module.exports = {createId, getColorBasedOnPrio, fixTimeCalculation};

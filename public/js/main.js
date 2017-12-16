@@ -34,7 +34,7 @@ function addMessageToDOM(message) {
 
                         <p>${message.message}</p><br>
 
-                        ${new Date(message.created).getDay()}-${new Date(message.created).getMonth()}-${new Date(message.created).getFullYear()} ${new Date(message.created).getHours()}:${new Date(message.created).getMinutes()}
+                        ${expressConfig.stringsHelper.fixTimeCalculation(new Date(message.created).getDay())}-${expressConfig.stringsHelper.fixTimeCalculation(new Date(message.created).getMonth())}-${expressConfig.stringsHelper.fixTimeCalculation(new Date(message.created).getFullYear())} ${expressConfig.stringsHelper.fixTimeCalculation(new Date(message.created).getHours())}:${expressConfig.stringsHelper.fixTimeCalculation(new Date(message.created).getMinutes())}
                     </div>
                 </div>
             </div>
