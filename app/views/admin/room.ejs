@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+        <% include ../partials/header.ejs %>
+
+        <main>
+            <h3>Rooms:</h3>
+
+            <a href="/admin/room/create">Create new room</a>
+            <ul id="rooms">
+                <% rooms.forEach((room) => { %>
+                    <li><%= room.id %> - <%= room.client_name %> - <a href="/admin/room/edit/<%= room.id %>">Edit</a> - <a href="/admin/room/delete/<%= room.id %>">Delete</a></li>
+                <% }); %>
+            </ul>
+        </main>
+
+        <% include ../partials/footer.ejs %>
+    </body>
+</html>

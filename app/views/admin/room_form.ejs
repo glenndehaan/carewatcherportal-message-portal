@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+        <% include ../partials/header.ejs %>
+
+        <main>
+            <h3><%= title %>:</h3>
+
+            <a href="/admin/room">Back</a><br/>
+
+            <form>
+                <input type="text" id="id" placeholder="Room Number" value="<%= room.id %>" /><br/>
+                <input type="text" id="client_name" placeholder="Client Name" value="<%= room.client_name %>" /><br/>
+                <input type="submit" id="submit" value="Send" data-action="<%= action %>">
+            </form>
+        </main>
+
+        <% include ../partials/footer.ejs %>
+        <% include ../partials/form-js.ejs %>
+    </body>
+</html>

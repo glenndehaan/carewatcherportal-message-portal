@@ -1,3 +1,8 @@
+/**
+ * Create's a random ID
+ *
+ * @return {string}
+ */
 function createId() {
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

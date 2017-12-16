@@ -14,6 +14,30 @@ const routes = [
         method: 'get',
         controller: 'Index',
         action: 'index'
+    },
+    {
+        route: '/admin/room',
+        method: 'get',
+        controller: 'Admin',
+        action: 'room'
+    },
+    {
+        route: '/admin/room/create',
+        method: 'get',
+        controller: 'Admin',
+        action: 'createRoom'
+    },
+    {
+        route: '/admin/room/edit/:id',
+        method: 'get',
+        controller: 'Admin',
+        action: 'editRoom'
+    },
+    {
+        route: '/admin/room/delete/:id',
+        method: 'get',
+        controller: 'Admin',
+        action: 'deleteRoom'
     }
 ];
 
