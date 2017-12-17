@@ -1,5 +1,5 @@
 const baseController = require('./BaseController');
-const database = require("../../helpers/modules/database").db;
+const database = require("../../helpers/modules/Database").db;
 const config = require("../../config/config");
 const arrays = require("../../helpers/utils/Arrays");
 
