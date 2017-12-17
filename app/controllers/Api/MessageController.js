@@ -1,5 +1,5 @@
 const baseController = require('./BaseController');
-const database = require("../../helpers/modules/database").db;
+const database = require("../../helpers/modules/Database").db;
 const createId = require("../../helpers/utils/Strings").createId;
 const config = require("../../config/config");
 const objects = require("../../helpers/utils/Objects");
