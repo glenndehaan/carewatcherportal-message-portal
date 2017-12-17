@@ -43,8 +43,13 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+
 }
 
 main {
     margin-bottom: 80px;
+}
+
+#nav-mobile{
+    padding-left: 20px;
 }

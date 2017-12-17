@@ -5,19 +5,33 @@
     </head>
     <body>
         <% include ../partials/header.ejs %>
-
+<div class="container">
         <main>
-            <h3><%= title %>:</h3>
+            <div class="col s12 m7">
 
-            <a href="/admin/room">Back</a><br/>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="/images/house.jpg">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h4><%= title %>:</h4>
 
-            <form>
-                <input type="text" id="id" placeholder="Room Number" value="<%= room.id %>" /><br/>
-                <input type="text" id="client_name" placeholder="Client Name" value="<%= room.client_name %>" /><br/>
-                <input type="submit" id="submit" value="Send" data-action="<%= action %>">
-            </form>
+                            <form>
+                                <input type="text" id="id" placeholder="Room Number" value="<%= room.id %>" /><br/>
+                                <input type="text" id="client_name" placeholder="Client Name" value="<%= room.client_name %>" /><br/>
+                                <button class="btn waves-effect waves-light" type="submit" id="submit" value="Send" data-action="<%= action %>">Assign<i class="material-icons right">send</i></button>
+                            </form>
+                        </div>
+                        <div class="card-action">
+                            <a href="/admin/room">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
-
+</div>
         <% include ../partials/footer.ejs %>
         <% include ../partials/form-js.ejs %>
     </body>

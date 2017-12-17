@@ -31,7 +31,7 @@
     "version": "0.0.0",
     "description": "Care Watcher Message Portal",
     "title": "Care Watcher Message Portal",
-    "url" : "http://localhost:3001",
+    "url": "http://localhost:3001",
     "template": {
       "forceLanguage": "en"
     }

@@ -25,7 +25,7 @@ class AdminController {
      */
     createRoomAction(req, res) {
         res.render('admin/room_form.ejs', {
-            title: 'Create new room',
+            title: 'Assign a room',
             room: {id: '', client_name: ''},
             action: 'create',
             config: config,
