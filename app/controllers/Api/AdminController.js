@@ -8,6 +8,12 @@ class AdminController extends baseController {
         super();
     }
 
+    /**
+     * Updated a message in the DB and sends an update to the sockets
+     *
+     * @param req
+     * @param res
+     */
     messageAction(req, res) {
         const index = arrays.findIndexByKeyValue(database.getData("/message"), "_id", req.body._id);
 
@@ -22,6 +28,12 @@ class AdminController extends baseController {
         }
     }
 
+    /**
+     * Creates or updates a room in the Database
+     *
+     * @param req
+     * @param res
+     */
     roomAction(req, res) {
         const action = req.body.action;
 

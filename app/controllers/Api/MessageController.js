@@ -9,12 +9,24 @@ class MessageController extends baseController {
         super();
     }
 
+    /**
+     * Returns all messages in the DB
+     *
+     * @param req
+     * @param res
+     */
     indexAction(req, res) {
         console.log('[API] Returning all messages');
 
         this.jsonResponse(res, 200, { 'messages': database.getData("/message") });
     }
 
+    /**
+     * Creates a new message in the DB and notify's all sockets (JSON call)
+     *
+     * @param req
+     * @param res
+     */
     createAction(req, res) {
         const id = req.body.id;
         const roomNumber = req.body.roomNumber;
@@ -58,6 +70,12 @@ class MessageController extends baseController {
         }
     }
 
+    /**
+     * Creates a new message in the DB and notify's all sockets (Form Data call)
+     *
+     * @param req
+     * @param res
+     */
     createAltAction(req, res) {
         const roomNumber = req.body.roomnr;
         const title = req.body.title;

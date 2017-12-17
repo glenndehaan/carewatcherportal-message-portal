@@ -5,6 +5,12 @@ class IndexController extends baseController {
         super();
     }
 
+    /**
+     * Default route
+     *
+     * @param req
+     * @param res
+     */
     indexAction(req, res) {
         this.jsonResponse(res, 200, { 'message': 'Default API route!' });
     }

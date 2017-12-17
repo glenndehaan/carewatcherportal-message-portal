@@ -3,6 +3,12 @@ const config = require("../../config/config");
 const arrays = require("../../helpers/utils/Arrays");
 
 class AdminController {
+    /**
+     * Renders the room overview page
+     *
+     * @param req
+     * @param res
+     */
     roomAction(req, res) {
         res.render('admin/room.ejs', {
             rooms: database.getData("/room"),
@@ -11,6 +17,12 @@ class AdminController {
         });
     }
 
+    /**
+     * Renders the create room form
+     *
+     * @param req
+     * @param res
+     */
     createRoomAction(req, res) {
         res.render('admin/room_form.ejs', {
             title: 'Create new room',
@@ -21,6 +33,12 @@ class AdminController {
         });
     }
 
+    /**
+     * Renders the edit room form
+     *
+     * @param req
+     * @param res
+     */
     editRoomAction(req, res) {
         const index = arrays.findIndexByKeyValue(database.getData("/room"), "id", req.params.id);
 
@@ -39,6 +57,12 @@ class AdminController {
         }
     }
 
+    /**
+     * Deletes a room from the DB
+     *
+     * @param req
+     * @param res
+     */
     deleteRoomAction(req, res) {
         const index = arrays.findIndexByKeyValue(database.getData("/room"), "id", req.params.id);
 

@@ -31,8 +31,9 @@ function getColorBasedOnPrio(prio) {
             return "blue";
     }
 }
+
 /**
- * Returns a icon name
+ * Returns a icon name based on prio
  *
  * @param prio
  * @return {string}
