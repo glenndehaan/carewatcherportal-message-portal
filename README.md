@@ -47,6 +47,11 @@ With the following form fields
 "priority": 1
 ```
 
+cUrl example:
+```
+curl -X POST --data "roomnr=1&title=A test message&description=Put some message text in here&priority=1" http://localhost:3001/api/message/alt
+```
+
 ## License
 
 MIT
