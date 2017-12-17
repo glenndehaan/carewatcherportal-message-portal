@@ -56,8 +56,53 @@ class MessageController extends baseController {
         } else {
             this.jsonResponse(res, 400, { 'error': 'Incorrect body!' });
         }
+    }
 
+    createAltAction(req, res) {
+        const roomNumber = req.body.roomnr;
+        const title = req.body.title;
+        const message = req.body.description;
+        const prio = req.body.priority;
 
+        if(typeof roomNumber !== "undefined" && typeof title !== "undefined" && typeof message !== "undefined" && typeof prio !== "undefined"){
+            const currentDate = new Date();
+            const _id = createId();
+            const created = currentDate.getTime();
+            let id = req.body.id;
+
+            if(typeof id === "undefined") {
+                id = false;
+            }
+
+            database.push("/message[]", {
+                _id: _id,
+                id: id,
+                roomNumber: parseInt(req.body.roomnr),
+                title: req.body.title,
+                message: req.body.description,
+                prio: parseInt(req.body.priority),
+                created: created,
+                completed: false
+            });
+
+            const socketMessage = objects.addClientsToObject({
+                _id: _id,
+                id: id,
+                roomNumber: parseInt(req.body.roomnr),
+                title: req.body.title,
+                message: req.body.description,
+                prio: parseInt(req.body.priority),
+                created: created,
+                completed: false
+            }, database.getData("/room"));
+
+            config.socket.broadcastNewMessage(socketMessage);
+
+            console.log(`[API] New message created with ID: ${id}`);
+            this.jsonResponse(res, 201, { 'message': 'Message created!' });
+        } else {
+            this.jsonResponse(res, 400, { 'error': 'Incorrect body!' });
+        }
     }
 }
 

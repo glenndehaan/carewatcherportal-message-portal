@@ -22,7 +22,7 @@
 
                                         <p><%= message.message %></p><br>
 
-                                        <%= stringsHelper.fixTimeCalculation(new Date(message.created).getDay()) %>-<%= stringsHelper.fixTimeCalculation(new Date(message.created).getMonth()) %>-<%= stringsHelper.fixTimeCalculation(new Date(message.created).getFullYear()) %> <%= stringsHelper.fixTimeCalculation(new Date(message.created).getHours()) %>:<%= stringsHelper.fixTimeCalculation(new Date(message.created).getMinutes()) %>
+                                        <%= stringsHelper.fixTimeCalculation(new Date(message.created).getDate()) %>-<%= stringsHelper.fixTimeCalculation(new Date(message.created).getMonth() + 1) %>-<%= stringsHelper.fixTimeCalculation(new Date(message.created).getFullYear()) %> <%= stringsHelper.fixTimeCalculation(new Date(message.created).getHours()) %>:<%= stringsHelper.fixTimeCalculation(new Date(message.created).getMinutes()) %>
                                     </div>
                                 </div>
                             </div>

@@ -17,7 +17,8 @@ A realtime node message portal
 - Run `npm run dev` in the _scripts folder
 
 ## App data
-Try to do a post to http://localhost:3001/message
+#### Using JSON
+Try to do a post to http://localhost:3001/api/message
 
 With the following body 
 ```
@@ -33,6 +34,18 @@ With the following body
 Then open up the browser again and go to: http://localhost:3001
 
 Tip: to do this 'post' try PostMan: https://www.getpostman.com/
+
+#### Using Form Data
+Try to do a post to http://localhost:3001/api/message/alt
+
+With the following form fields
+```
+"id": 1,
+"roomnr": 1,
+"title": "A test message",
+"description": "Put some message text in here",
+"priority": 1
+```
 
 ## License
 

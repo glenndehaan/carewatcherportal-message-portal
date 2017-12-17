@@ -28,6 +28,13 @@ const routes = [
         action: 'create'
     },
     {
+        route: '/message/alt',
+        method: 'post',
+        controller: 'Message',
+        action: 'createAlt',
+        useMulter: true
+    },
+    {
         route: '/admin/room',
         method: 'post',
         controller: 'Admin',
