@@ -11,6 +11,31 @@ class AdminController extends baseController {
     /**
      * Updated a message in the DB and sends an update to the sockets
      *
+     * @api {post} /api/admin/message /api/admin/message
+     * @apiName message
+     * @apiGroup Admin
+     *
+     * @apiParamExample {json} Request-Example:
+     *     {
+     *       "_id": 1
+     *     }
+     *
+     * @apiSuccess {String} message Message modified!
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "message": "Message modified!"
+     *     }
+     *
+     * @apiError {String} error Incorrect message!
+     *
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 400 Bad Request
+     *     {
+     *       "error": "Incorrect message!"
+     *     }
+     *
      * @param req
      * @param res
      */
@@ -30,6 +55,33 @@ class AdminController extends baseController {
 
     /**
      * Creates or updates a room in the Database
+     *
+     * @api {post} /api/admin/room /api/admin/room
+     * @apiName room
+     * @apiGroup Admin
+     *
+     * @apiParamExample {json} Request-Example:
+     *     {
+     *       "id": 1,
+     *       "action": "create",
+     *       "client_name": "Test User"
+     *     }
+     *
+     * @apiSuccess {String} message Room created!
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "message": "Room created!"
+     *     }
+     *
+     * @apiError {String} error Incorrect body!
+     *
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 400 Bad Request
+     *     {
+     *       "error": "Incorrect body!"
+     *     }
      *
      * @param req
      * @param res

@@ -8,6 +8,18 @@ class IndexController extends baseController {
     /**
      * Default route
      *
+     * @api {get} /api /api
+     * @apiName api
+     * @apiGroup General
+     *
+     * @apiSuccess {String} message A default api message
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "message": "Default API route!"
+     *     }
+     *
      * @param req
      * @param res
      */

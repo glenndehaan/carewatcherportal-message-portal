@@ -50,6 +50,22 @@ app.use((req, res) => {
 
     // respond with json
     if (req.originalUrl.split('/')[1] === 'api') {
+
+        /**
+         * API 404 not found
+         *
+         * @api {get} /api/notfound /api/notfound
+         * @apiName notfound
+         * @apiGroup General
+         *
+         * @apiError {String} error A default api not found message
+         *
+         * @apiErrorExample Error-Response:
+         *     HTTP/1.1 404 Not Found
+         *     {
+         *       "error": "This API route is not implemented yet"
+         *     }
+         */
         res.send({ error: 'This API route is not implemented yet' });
         return;
     }
