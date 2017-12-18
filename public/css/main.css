@@ -53,3 +53,14 @@ main {
 #nav-mobile{
     padding-left: 20px;
 }
+
+div#messages{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 601px){
+    .row .col.m6  {
+      margin-left: 0;
+    }
+}
